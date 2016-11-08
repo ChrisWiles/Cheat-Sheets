@@ -148,3 +148,30 @@ MyComponent.propTypes = {
     }
   })
 }
+
+
+// class constructor & super(props)
+class MyClass extends React.component{
+    constructor(props){
+        super();
+        console.log(this.props); // this.props is undefined
+
+    }
+}
+
+// Don't need a constructor if you don't need props in the constructor
+class MyClass extends React.component{
+    state = {
+      array: [0,1,2]
+    }
+    render(){
+        // There is no need to call `super(props)` or even having a constructor
+
+        // this.props is automatically set for you by React
+
+        // not just in render but another where else other than the constructor
+
+        console.log(this.props);  // it works!
+
+    }
+}
