@@ -153,8 +153,8 @@ MyComponent.propTypes = {
 // class constructor & super(props)
 class MyClass extends React.component{
     constructor(props){
-        super();
-        console.log(this.props); // this.props is undefined
+        super()
+        console.log(this.props) // this.props is undefined
 
     }
 }
@@ -171,7 +171,16 @@ class MyClass extends React.component{
 
         // not just in render but another where else other than the constructor
 
-        console.log(this.props);  // it works!
+        console.log(this.props)  // it works!
 
     }
 }
+
+
+this.setState((prevState, props) => {
+  return {myInteger: prevState.myInteger + props.step}
+})
+
+this.setState(prevState => {
+  return {myInteger: prevState.myInteger + 1}
+})
